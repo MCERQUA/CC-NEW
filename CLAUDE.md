@@ -2,54 +2,100 @@
 
 This file provides guidance to Claude Code (claude.ai/code) when working with code in this repository.
 
-## Project Overview
+## Repository Overview
 
-This is an Eleventy (11ty) static site generator project for a contractor/construction company website with a dynamic blog system. The site automatically generates blog posts from Markdown files and is configured for deployment on Netlify.
+This repository contains two distinct projects:
+
+1. **Eleventy Website** (`/Websites/Tempate-Base-Website/`) - A static site generator project for a contractor/construction company
+2. **Multi-Agent Claude System** (`/multi-agent-claude/`) - A coordination framework for running multiple Claude agents in parallel
 
 ## Essential Commands
 
+### Eleventy Website Project
 ```bash
+# Navigate to website directory
+cd Websites/Tempate-Base-Website/
+
 # Install dependencies
 npm install
 
-# Start development server (runs on http://localhost:8080)
+# Start development server (http://localhost:8080)
 npm start
 
-# Build static site (outputs to _site directory)
+# Build static site (outputs to _site/)
 npm run build
 ```
 
-## Architecture & Key Concepts
+### Multi-Agent System
+```bash
+# Navigate to multi-agent directory
+cd multi-agent-claude/
 
-### Static Site Generation with Eleventy
-- The project uses Eleventy to transform Nunjucks templates (`.njk`) and Markdown files into static HTML
-- Blog posts are automatically generated from Markdown files in `src/blog/`
-- Templates use the Nunjucks templating engine with layouts defined in `src/_includes/`
+# Run initial setup
+./setup.sh
 
-### Content Structure
-- **Blog Posts**: Markdown files in `src/blog/` with specific frontmatter requirements:
-  - `layout: post.njk` (required)
-  - `title`, `date`, `author`, `excerpt`, `tags` fields
-  - Filename convention: `YYYY-MM-DD-slug-name.md`
-- **Site Data**: Company information stored in `src/_data/site.json`
-- **Page Templates**: Nunjucks files in `src/` root (index.njk, about.njk, etc.)
+# Install Rust if needed
+./multi-agent-setup/install-rust.sh
 
-### Deployment Configuration
-- Netlify deployment is pre-configured via `netlify.toml`
-- Build command: `npm run build`
-- Publish directory: `_site`
-- Node version: 18
-- Includes Lighthouse plugin for performance monitoring
+# Test the setup
+./test_setup.py
 
-### Styling
-- All styles are in `src/css/style.css`
-- Uses CSS custom properties for theming (colors defined as variables)
-- Mobile-responsive design included
+# Start agent coordinator
+python3 scripts/start_session.py
 
-### Eleventy Configuration
-- Configuration is in `.eleventy.js` which sets:
-  - Input directory: `src/`
-  - Output directory: `_site/`
-  - Includes directory: `src/_includes/`
-  - Data directory: `src/_data/`
-  - CSS files are copied via passthrough
+# Run cargo daemon for Rust projects
+python3 scripts/cargo_daemon.py /path/to/rust/project 300
+```
+
+## High-Level Architecture
+
+### Eleventy Website Architecture
+- **Static Site Generation**: Eleventy transforms Nunjucks templates and Markdown into static HTML
+- **Blog System**: Automatically generates posts from Markdown files in `src/blog/` with specific frontmatter
+- **Template Structure**: Nunjucks templates in `src/_includes/` provide layouts (base.njk, post.njk)
+- **Deployment**: Pre-configured for Netlify with build settings in `netlify.toml`
+- **Styling**: Single CSS file at `src/css/style.css` using CSS custom properties
+
+### Multi-Agent System Architecture
+- **Coordinator Pattern**: `start_session.py` manages multiple Claude agents with task distribution
+- **Task Management**: `task_manager.py` prevents conflicts with file locking and task claiming
+- **Agent Types**: 12 agents specialized in frontend, backend, database, testing, and DevOps
+- **MCP Integration**: Connects to Model Context Protocol servers for enhanced capabilities
+- **Shared State**: Todo system and file locks stored in `shared/` directory
+- **Monitoring**: Cargo daemon provides continuous Rust project health checks
+
+### Key Integration Points
+- **File Locking**: Prevents multiple agents from editing same files simultaneously
+- **Task Claims**: Timestamp-based system ensures only one agent works on each task
+- **Shared Todo**: Centralized task tracking across all agents
+- **MCP Servers**: Provide access to Obsidian docs, Git operations, and file system
+
+## Working with Blog Posts
+
+When creating blog posts in the Eleventy site:
+1. Place Markdown files in `Websites/Tempate-Base-Website/src/blog/`
+2. Use filename format: `YYYY-MM-DD-slug-name.md`
+3. Include required frontmatter:
+   ```yaml
+   ---
+   layout: post.njk
+   title: "Post Title"
+   date: 2024-03-01
+   author: "Author Name"
+   excerpt: "Brief description"
+   tags: ["tag1", "tag2"]
+   ---
+   ```
+
+## Testing and Validation
+
+The repository currently has no configured test commands. When implementing tests:
+- For the Eleventy site: Consider adding HTML validation and link checking
+- For the multi-agent system: Test coordination scripts with `test_setup.py`
+
+## Important Notes
+
+- The git status shows many files have been moved from root to `Websites/Tempate-Base-Website/`
+- No linting commands are currently configured - ask user for lint commands if needed
+- The multi-agent system requires Rust/Cargo for full functionality
+- MCP servers may require additional setup and API tokens

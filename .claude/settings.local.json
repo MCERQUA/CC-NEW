@@ -1,7 +1,16 @@
 {
   "permissions": {
     "allow": [
-      "Bash(git commit:*)"
+      "Bash(git commit:*)",
+      "Bash(cargo --version)",
+      "Bash(chmod:*)",
+      "Bash(mkdir:*)",
+      "Bash(ls:*)",
+      "Bash(node:*)",
+      "Bash(npm --version)",
+      "Bash(python3:*)",
+      "Bash(./setup.sh:*)",
+      "Bash(./multi-agent-setup/install-rust.sh:*)"
     ],
     "deny": []
   }
