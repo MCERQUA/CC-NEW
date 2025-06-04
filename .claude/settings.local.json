@@ -10,7 +10,10 @@
       "Bash(npm --version)",
       "Bash(python3:*)",
       "Bash(./setup.sh:*)",
-      "Bash(./multi-agent-setup/install-rust.sh:*)"
+      "Bash(./multi-agent-setup/install-rust.sh:*)",
+      "Bash(rm:*)",
+      "Bash(npm run build:*)",
+      "Bash(npm install)"
     ],
     "deny": []
   }
