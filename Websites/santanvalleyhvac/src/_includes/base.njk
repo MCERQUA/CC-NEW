@@ -98,27 +98,27 @@
     }
     </script>
     
-    <link rel="stylesheet" href="/css/style.css">
+    <link rel="stylesheet" href="{{ '/css/style.css' | url }}">
     <link rel="preconnect" href="https://fonts.googleapis.com">
     
     <!-- Favicon -->
-    <link rel="icon" type="image/png" href="/favicon.png">
+    <link rel="icon" type="image/png" href="{{ '/favicon.png' | url }}">
 </head>
 <body>
     <header class="site-header">
         <div class="container">
             <div class="header-content">
                 <div class="logo">
-                    <a href="/" aria-label="{{ site.name }} Home">{{ site.name }}</a>
+                    <a href="{{ '/' | url }}" aria-label="{{ site.name }} Home">{{ site.name }}</a>
                 </div>
                 <nav class="main-nav" aria-label="Main navigation">
                     <ul>
-                        <li><a href="/">Home</a></li>
-                        <li><a href="/about/">About</a></li>
-                        <li><a href="/services/">Services</a></li>
-                        <li><a href="/projects/">Projects</a></li>
-                        <li><a href="/blog/">Blog</a></li>
-                        <li><a href="/contact/" class="cta-button">Get Free Quote</a></li>
+                        <li><a href="{{ '/' | url }}">Home</a></li>
+                        <li><a href="{{ '/about/' | url }}">About</a></li>
+                        <li><a href="{{ '/services/' | url }}">Services</a></li>
+                        <li><a href="{{ '/projects/' | url }}">Projects</a></li>
+                        <li><a href="{{ '/blog/' | url }}">Blog</a></li>
+                        <li><a href="{{ '/contact/' | url }}" class="cta-button">Get Free Quote</a></li>
                     </ul>
                 </nav>
             </div>
@@ -186,21 +186,21 @@
                 <div class="footer-section">
                     <h3>Our Services</h3>
                     <ul>
-                        <li><a href="/services/#air-conditioning">Air Conditioning</a></li>
-                        <li><a href="/services/#heating">Heating Systems</a></li>
-                        <li><a href="/services/#ventilation">Ventilation</a></li>
-                        <li><a href="/services/#maintenance">Preventive Maintenance</a></li>
-                        <li><a href="/services/#emergency">24/7 Emergency Service</a></li>
+                        <li><a href="{{ '/services/#air-conditioning' | url }}">Air Conditioning</a></li>
+                        <li><a href="{{ '/services/#heating' | url }}">Heating Systems</a></li>
+                        <li><a href="{{ '/services/#ventilation' | url }}">Ventilation</a></li>
+                        <li><a href="{{ '/services/#maintenance' | url }}">Preventive Maintenance</a></li>
+                        <li><a href="{{ '/services/#emergency' | url }}">24/7 Emergency Service</a></li>
                     </ul>
                 </div>
                 <div class="footer-section">
                     <h3>Quick Links</h3>
                     <ul>
-                        <li><a href="/contact/">Get Free Quote</a></li>
-                        <li><a href="/financing/">Financing Options</a></li>
-                        <li><a href="/testimonials/">Customer Reviews</a></li>
-                        <li><a href="/blog/">HVAC Tips & News</a></li>
-                        <li><a href="/warranty/">Warranty Information</a></li>
+                        <li><a href="{{ '/contact/' | url }}">Get Free Quote</a></li>
+                        <li><a href="{{ '/financing/' | url }}">Financing Options</a></li>
+                        <li><a href="{{ '/testimonials/' | url }}">Customer Reviews</a></li>
+                        <li><a href="{{ '/blog/' | url }}">HVAC Tips & News</a></li>
+                        <li><a href="{{ '/warranty/' | url }}">Warranty Information</a></li>
                     </ul>
                 </div>
             </div>
