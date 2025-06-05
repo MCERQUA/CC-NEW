@@ -34,6 +34,10 @@ module.exports = function(eleventyConfig) {
     // Set template formats
     templateFormats: ["njk", "md", "html"],
     // Set Nunjucks as the default template engine for .html files
-    htmlTemplateEngine: "njk"
+    htmlTemplateEngine: "njk",
+    markdownTemplateEngine: "njk",
+    dataTemplateEngine: "njk",
+    // This helps with path resolution
+    pathPrefix: "/"
   };
 };
