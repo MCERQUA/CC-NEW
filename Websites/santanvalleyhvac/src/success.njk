@@ -1,0 +1,168 @@
+---
+layout: base.njk
+title: Thank You
+description: Your message has been successfully sent
+---
+
+<section class="page-header">
+    <div class="container">
+        <h1>Thank You!</h1>
+        <p>Your message has been successfully sent</p>
+    </div>
+</section>
+
+<section class="success-section">
+    <div class="container">
+        <div class="success-content">
+            <div class="success-icon">✓</div>
+            <h2>We've Received Your Message</h2>
+            <p>Thank you for contacting Santa Valley HVAC. One of our team members will review your request and get back to you within 24 hours.</p>
+            
+            <div class="next-steps">
+                <h3>What Happens Next?</h3>
+                <ul>
+                    <li>A specialist will review your project details</li>
+                    <li>We'll contact you within 24 hours to discuss your needs</li>
+                    <li>We'll schedule a convenient time for an on-site consultation if needed</li>
+                    <li>You'll receive a detailed quote for your project</li>
+                </ul>
+            </div>
+            
+            <div class="urgent-notice">
+                <h3>Need Immediate Assistance?</h3>
+                <p>For urgent HVAC repairs or emergency services, please call our 24/7 hotline:</p>
+                <p class="emergency-number"><a href="tel:555-999-8888">(555) 999-8888</a></p>
+            </div>
+            
+            <div class="action-buttons">
+                <a href="/" class="cta-button">Return to Homepage</a>
+                <a href="/services/" class="secondary-button">View Our Services</a>
+            </div>
+        </div>
+    </div>
+</section>
+
+<style>
+.success-section {
+    padding: 60px 0;
+    min-height: 60vh;
+}
+
+.success-content {
+    max-width: 600px;
+    margin: 0 auto;
+    text-align: center;
+}
+
+.success-icon {
+    width: 80px;
+    height: 80px;
+    background: #22c55e;
+    color: white;
+    font-size: 48px;
+    border-radius: 50%;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 0 auto 30px;
+    font-weight: bold;
+}
+
+.success-content h2 {
+    color: var(--primary-color, #0056b3);
+    margin-bottom: 20px;
+}
+
+.next-steps {
+    background: #f8f9fa;
+    padding: 30px;
+    border-radius: 10px;
+    margin: 40px 0;
+    text-align: left;
+}
+
+.next-steps h3 {
+    color: var(--primary-color, #0056b3);
+    margin-bottom: 20px;
+}
+
+.next-steps ul {
+    list-style: none;
+    padding: 0;
+}
+
+.next-steps li {
+    padding: 10px 0;
+    padding-left: 30px;
+    position: relative;
+}
+
+.next-steps li:before {
+    content: "→";
+    position: absolute;
+    left: 0;
+    color: var(--primary-color, #0056b3);
+    font-weight: bold;
+}
+
+.urgent-notice {
+    background: #fff3cd;
+    border: 2px solid #ffc107;
+    padding: 25px;
+    border-radius: 10px;
+    margin: 30px 0;
+}
+
+.urgent-notice h3 {
+    color: #856404;
+    margin-bottom: 15px;
+}
+
+.emergency-number {
+    font-size: 24px;
+    font-weight: bold;
+    margin-top: 10px;
+}
+
+.emergency-number a {
+    color: #dc3545;
+    text-decoration: none;
+}
+
+.action-buttons {
+    margin-top: 40px;
+    display: flex;
+    gap: 20px;
+    justify-content: center;
+    flex-wrap: wrap;
+}
+
+.secondary-button {
+    display: inline-block;
+    padding: 12px 30px;
+    background: transparent;
+    color: var(--primary-color, #0056b3);
+    border: 2px solid var(--primary-color, #0056b3);
+    text-decoration: none;
+    border-radius: 5px;
+    transition: all 0.3s ease;
+}
+
+.secondary-button:hover {
+    background: var(--primary-color, #0056b3);
+    color: white;
+}
+
+@media (max-width: 768px) {
+    .action-buttons {
+        flex-direction: column;
+        align-items: center;
+    }
+    
+    .cta-button,
+    .secondary-button {
+        width: 100%;
+        max-width: 300px;
+    }
+}
+</style>
