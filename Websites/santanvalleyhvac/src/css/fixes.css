@@ -1,0 +1,178 @@
+/* EMERGENCY FIX CSS - OVERRIDES */
+
+/* FIX 1: HERO BACKGROUND IMAGE VISIBILITY */
+.hero {
+    background: url('/images/hero-bg.svg') center/cover no-repeat, #0056b3 !important;
+    position: relative !important;
+}
+
+.hero::before {
+    display: none !important;
+}
+
+.hero h1, .hero p, .hero .cta-button, .hero .secondary-button {
+    position: relative;
+    z-index: 10;
+}
+
+/* FIX 2: EMERGENCY BUTTON WHITE TEXT */
+.emergency-banner .cta-button {
+    background: #ffffff !important;
+    color: #dc2626 !important;
+    border: 2px solid #ffffff !important;
+    padding: 12px 30px !important;
+    font-weight: bold !important;
+    font-size: 1.1rem !important;
+}
+
+.emergency-banner .cta-button:hover {
+    background: rgba(255, 255, 255, 0.9) !important;
+    color: #991b1b !important;
+    transform: scale(1.05);
+}
+
+/* FIX 3: WHY CHOOSE US SECTION */
+.why-choose-us {
+    background: #f8f9fa;
+    padding: 4rem 0;
+}
+
+.features-grid {
+    display: grid;
+    grid-template-columns: repeat(auto-fit, minmax(300px, 1fr));
+    gap: 2rem;
+    margin-top: 3rem;
+}
+
+.feature {
+    background: white;
+    padding: 2rem;
+    border-radius: 12px;
+    box-shadow: 0 2px 15px rgba(0,0,0,0.08);
+    transition: all 0.3s ease;
+    text-align: center;
+    border-top: 4px solid var(--primary-color);
+}
+
+.feature:hover {
+    transform: translateY(-5px);
+    box-shadow: 0 5px 25px rgba(0,0,0,0.12);
+}
+
+.feature-icon {
+    display: none !important;
+}
+
+.feature h3 {
+    color: var(--primary-color);
+    font-size: 1.4rem;
+    margin-bottom: 1rem;
+    font-weight: 700;
+}
+
+.feature h3::before {
+    content: "✓ ";
+    color: var(--accent-color);
+    font-size: 1.2rem;
+}
+
+.feature p {
+    color: #6b7280;
+    line-height: 1.6;
+    font-size: 1rem;
+}
+
+/* FIX 4: SERVICE ICONS */
+.service-icon {
+    width: 80px !important;
+    height: 80px !important;
+    margin: 0 auto 1.5rem !important;
+    background: linear-gradient(135deg, #1e3a8a, #0ea5e9) !important;
+    border-radius: 50% !important;
+    display: flex !important;
+    align-items: center !important;
+    justify-content: center !important;
+    color: white !important;
+    font-size: 1.5rem !important;
+    font-weight: bold !important;
+}
+
+/* FIX 5: BLOG CARD IMAGES */
+.blog-image {
+    height: 200px;
+    background-size: cover !important;
+    background-position: center !important;
+    position: relative;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+}
+
+.blog-image::after {
+    content: attr(data-category);
+    position: absolute;
+    top: 20px;
+    left: 20px;
+    background: var(--primary-color);
+    color: white;
+    padding: 5px 15px;
+    border-radius: 20px;
+    font-size: 0.85rem;
+    font-weight: 600;
+}
+
+/* Blog Card 1 - AC Maintenance */
+.blog-card:nth-child(1) .blog-image {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)), 
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%230ea5e9" width="400" height="200"/><rect x="50" y="50" width="100" height="100" rx="10" fill="white" opacity="0.2"/><rect x="250" y="50" width="100" height="100" rx="10" fill="white" opacity="0.2"/><path d="M100 80h0m0 20h0m0 20h0m200-40h0m0 20h0m0 20h0" stroke="white" stroke-width="40" stroke-linecap="round" opacity="0.3"/></svg>') !important;
+}
+
+.blog-card:nth-child(1) .blog-image::after {
+    content: "AC TIPS";
+}
+
+/* Blog Card 2 - Heating */
+.blog-card:nth-child(2) .blog-image {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%23dc2626" width="400" height="200"/><circle cx="200" cy="100" r="60" fill="%23f59e0b" opacity="0.5"/><path d="M200 40v120M140 100h120" stroke="white" stroke-width="3" opacity="0.4"/></svg>') !important;
+}
+
+.blog-card:nth-child(2) .blog-image::after {
+    content: "HEATING";
+}
+
+/* Blog Card 3 - Air Quality */
+.blog-card:nth-child(3) .blog-image {
+    background: linear-gradient(rgba(0,0,0,0.4), rgba(0,0,0,0.5)),
+                url('data:image/svg+xml;utf8,<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 400 200"><rect fill="%2310b981" width="400" height="200"/><path d="M50 100q50-30 100 0t100 0t100 0" stroke="white" stroke-width="3" fill="none" opacity="0.3"/><path d="M50 130q50-30 100 0t100 0t100 0" stroke="white" stroke-width="3" fill="none" opacity="0.3"/></svg>') !important;
+}
+
+.blog-card:nth-child(3) .blog-image::after {
+    content: "AIR QUALITY";
+}
+
+/* Remove all SVG icons that are still showing */
+.trust-icon svg,
+.service-icon svg,
+.feature-icon svg,
+.blog-image svg {
+    display: none !important;
+}
+
+/* Trust icons fix */
+.trust-icon {
+    width: 30px;
+    height: 30px;
+    background: var(--success-color);
+    border-radius: 50%;
+    display: inline-flex;
+    align-items: center;
+    justify-content: center;
+    color: white;
+    font-weight: bold;
+}
+
+.trust-icon::before {
+    content: "✓";
+    font-size: 18px;
+}
