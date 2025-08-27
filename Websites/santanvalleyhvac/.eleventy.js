@@ -4,6 +4,9 @@ module.exports = function(eleventyConfig) {
   // Copy the CSS folder to the output
   eleventyConfig.addPassthroughCopy("src/css");
   
+  // Copy the images folder to the output
+  eleventyConfig.addPassthroughCopy("src/images");
+  
   // Add date filters
   eleventyConfig.addFilter("postDate", dateObj => {
     return DateTime.fromJSDate(dateObj).toLocaleString(DateTime.DATE_MED);

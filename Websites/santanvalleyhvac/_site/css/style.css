@@ -595,7 +595,10 @@ body {
 
 /* Hero Section - HVAC Focused */
 .hero {
-    background: linear-gradient(rgba(30, 58, 138, 0.9), rgba(14, 165, 233, 0.8)), url('/img/hvac-hero.jpg') center/cover;
+    background: url('/images/hero-bg.svg'), linear-gradient(rgba(30, 58, 138, 0.95), rgba(14, 165, 233, 0.9));
+    background-size: cover, cover;
+    background-position: center, center;
+    background-repeat: no-repeat, no-repeat;
     color: var(--white);
     padding: 8rem 0;
     text-align: center;
@@ -624,7 +627,6 @@ body {
     font-size: 3.5rem;
     margin-bottom: 1rem;
     font-weight: 800;
-    text-shadow: 2px 2px 4px rgba(0,0,0,0.3);
     position: relative;
 }
 
@@ -635,6 +637,7 @@ body {
     margin-left: auto;
     margin-right: auto;
     opacity: 0.95;
+    text-shadow: 1px 1px 3px rgba(0,0,0,0.6);
 }
 
 .hero-buttons {
@@ -664,6 +667,40 @@ body {
 .secondary-button:hover {
     background-color: var(--white);
     color: var(--primary-color) !important;
+}
+
+/* SVG Icon Styles */
+.trust-icon svg,
+.service-icon svg,
+.feature-icon svg,
+.blog-image svg {
+    width: 100%;
+    height: auto;
+    display: block;
+}
+
+.trust-icon svg {
+    color: var(--success-color);
+}
+
+.service-icon svg {
+    color: var(--accent-color);
+}
+
+.feature-icon svg {
+    color: var(--primary-color);
+}
+
+.blog-image svg {
+    color: var(--medium-gray);
+    padding: 20px;
+}
+
+/* Star Ratings */
+.rating .stars {
+    color: #fbbf24;
+    font-size: 1.25rem;
+    letter-spacing: 2px;
 }
 
 /* Trust Indicators */

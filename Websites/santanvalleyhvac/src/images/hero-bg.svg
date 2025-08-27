@@ -1,0 +1,30 @@
+<svg width="1920" height="800" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <linearGradient id="gradient" x1="0%" y1="0%" x2="100%" y2="100%">
+      <stop offset="0%" style="stop-color:#0056b3;stop-opacity:0.8" />
+      <stop offset="100%" style="stop-color:#004494;stop-opacity:0.9" />
+    </linearGradient>
+    <pattern id="grid" width="50" height="50" patternUnits="userSpaceOnUse">
+      <path d="M 50 0 L 0 0 0 50" fill="none" stroke="#ffffff" stroke-width="0.5" opacity="0.1"/>
+    </pattern>
+  </defs>
+  <rect width="1920" height="800" fill="url(#gradient)"/>
+  <rect width="1920" height="800" fill="url(#grid)"/>
+  
+  <!-- Abstract HVAC elements -->
+  <g opacity="0.1">
+    <!-- AC Unit -->
+    <rect x="100" y="200" width="150" height="150" rx="10" fill="#fff" opacity="0.2"/>
+    <line x1="120" y1="220" x2="230" y2="220" stroke="#fff" stroke-width="2"/>
+    <line x1="120" y1="240" x2="230" y2="240" stroke="#fff" stroke-width="2"/>
+    <line x1="120" y1="260" x2="230" y2="260" stroke="#fff" stroke-width="2"/>
+    
+    <!-- Thermostat -->
+    <circle cx="1600" cy="300" r="80" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+    <text x="1600" y="310" text-anchor="middle" font-size="48" fill="#fff" opacity="0.3">72°</text>
+    
+    <!-- Airflow lines -->
+    <path d="M300 400 Q 400 350 500 400 T 700 400" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+    <path d="M1200 500 Q 1300 450 1400 500 T 1600 500" fill="none" stroke="#fff" stroke-width="2" opacity="0.2"/>
+  </g>
+</svg>
