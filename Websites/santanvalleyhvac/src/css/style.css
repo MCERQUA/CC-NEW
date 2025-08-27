@@ -595,10 +595,10 @@ body {
 
 /* Hero Section - HVAC Focused */
 .hero {
-    background: url('/images/hero-bg.svg'), linear-gradient(rgba(30, 58, 138, 0.95), rgba(14, 165, 233, 0.9));
-    background-size: cover, cover;
-    background-position: center, center;
-    background-repeat: no-repeat, no-repeat;
+    background: linear-gradient(rgba(30, 58, 138, 0.85), rgba(14, 165, 233, 0.8)), url('/images/hero-bg.svg');
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
     color: var(--white);
     padding: 8rem 0;
     text-align: center;
@@ -669,15 +669,39 @@ body {
     color: var(--primary-color) !important;
 }
 
+/* View All Links */
+.cta-link {
+    display: inline-block;
+    color: var(--primary-color);
+    text-decoration: none;
+    font-weight: 600;
+    margin-top: 2rem;
+    padding: 0.75rem 1.5rem;
+    border: 2px solid var(--primary-color);
+    border-radius: 50px;
+    transition: all 0.3s ease;
+}
+
+.cta-link:hover {
+    background-color: var(--primary-color);
+    color: var(--white);
+}
+
 /* SVG Icon Styles */
-.trust-icon svg,
-.service-icon svg,
-.feature-icon svg,
-.blog-image svg {
-    width: 100%;
-    height: auto;
+.trust-icon svg {
+    width: 24px;
+    height: 24px;
     display: block;
 }
+
+.service-icon svg,
+.feature-icon svg {
+    width: 48px;
+    height: 48px;
+    display: block;
+    margin: 0 auto;
+}
+
 
 .trust-icon svg {
     color: var(--success-color);
@@ -854,6 +878,13 @@ body {
 .emergency-banner .cta-button {
     background-color: var(--white);
     color: var(--secondary-color) !important;
+    border: 2px solid var(--white);
+}
+
+.emergency-banner .cta-button:hover {
+    background-color: transparent;
+    color: var(--white) !important;
+    border-color: var(--white);
 }
 
 /* Why Choose Us Section */
@@ -1022,12 +1053,16 @@ body {
 
 .blog-image {
     height: 200px;
-    background: linear-gradient(135deg, var(--primary-color), var(--accent-color));
+    background: linear-gradient(135deg, #e5e7eb, #f3f4f6);
     display: flex;
     align-items: center;
     justify-content: center;
-    color: var(--white);
-    font-size: 3rem;
+    position: relative;
+}
+
+.blog-image svg {
+    color: var(--medium-gray);
+    opacity: 0.5;
 }
 
 .blog-content {
