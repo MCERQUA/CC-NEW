@@ -151,6 +151,59 @@
     content: "AIR QUALITY";
 }
 
+/* FIX 6: CTA SECTION BUTTONS */
+.cta-section {
+    text-align: center;
+    padding: 4rem 0;
+    background: linear-gradient(135deg, #f3f4f6, #e5e7eb);
+}
+
+.cta-section .hero-buttons {
+    display: flex;
+    justify-content: center;
+    align-items: center;
+    gap: 1.5rem;
+    flex-wrap: wrap;
+    margin-top: 2rem;
+}
+
+.cta-section .cta-button {
+    background: linear-gradient(135deg, var(--secondary-color), #ef4444) !important;
+    color: white !important;
+    padding: 1rem 2.5rem !important;
+    font-size: 1.1rem !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-weight: 600 !important;
+    box-shadow: 0 4px 15px rgba(220, 38, 38, 0.3) !important;
+    transition: all 0.3s ease !important;
+}
+
+.cta-section .cta-button:hover {
+    transform: translateY(-2px) !important;
+    box-shadow: 0 6px 20px rgba(220, 38, 38, 0.4) !important;
+}
+
+.cta-section .secondary-button {
+    background: white !important;
+    color: var(--primary-color) !important;
+    border: 2px solid var(--primary-color) !important;
+    padding: 1rem 2.5rem !important;
+    font-size: 1.1rem !important;
+    border-radius: 50px !important;
+    text-decoration: none !important;
+    display: inline-block !important;
+    font-weight: 600 !important;
+    transition: all 0.3s ease !important;
+}
+
+.cta-section .secondary-button:hover {
+    background: var(--primary-color) !important;
+    color: white !important;
+    transform: translateY(-2px) !important;
+}
+
 /* Remove all SVG icons that are still showing */
 .trust-icon svg,
 .service-icon svg,
